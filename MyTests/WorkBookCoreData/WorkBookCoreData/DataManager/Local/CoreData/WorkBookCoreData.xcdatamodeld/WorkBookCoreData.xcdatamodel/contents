@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+    </entity>
+    <entity name="Note" representedClassName="NoteMO" syncable="YES" codeGenerationType="category">
+        <attribute name="contains" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="notebook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notebook" inverseName="notes" inverseEntity="Notebook"/>
+    </entity>
+    <entity name="Notebook" representedClassName=".NotebookMO" syncable="YES" codeGenerationType="category">
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="notebook" inverseEntity="Note"/>
+    </entity>
+    <elements>
+        <element name="Note" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="Notebook" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Image" positionX="-63" positionY="27" width="128" height="44"/>
+    </elements>
+</model>
